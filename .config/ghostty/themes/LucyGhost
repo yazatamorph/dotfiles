@@ -1,0 +1,47 @@
+# underwater blue
+background = 292d3e
+# text, tint of faff pink
+foreground = ffdffa
+# grapesicle
+selection-background = b181ec
+# underwater blue
+selection-foreground = 292d3e
+cursor-color = ffdffa
+cursor-text = 292d3e
+split-divider-color = c4c4c4
+
+### palette
+## "dark" colors
+# (ansi black) overlay, shade of underwater blue
+palette = 0=1e212e
+# (ansi red) hot pink
+palette = 1=fe7ab2
+# (ansi green) limesicle
+palette = 2=c8ffa7
+# (ansi yellow) lemonsicle
+palette = 3=fdffab
+# (ansi blue) grapesicle
+palette = 4=b181ec
+# (ansi magenta) text, tint of faff pink
+palette = 5=ffdffa
+# (ansi cyan) unnamed blue
+palette = 6=a6f0fc
+# (ansi white) subtle
+palette = 7=c4c4c4
+## "light" colors
+# (ansi light black) underwater blue
+palette = 8=292d3e
+# (ansi light red) tint of hot pink
+palette = 9=fea2c9
+# (ansi light green) tint of limesicle
+palette = 10=deffca
+# (ansi light yellow) aged plastic yellow
+palette = 11=fffbe8
+# (ansi light blue) tint of grapesicle
+palette = 12=d8c0f6
+# (ansi light magenta) faff pink
+palette = 13=ffaff3
+# (ansi light cyan) tint of unnamed blue
+palette = 14=d3f8fe
+# (ansi light white) subtler
+palette = 15=e4e4e4

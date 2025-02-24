@@ -1,0 +1,32 @@
+shell-integration = zsh
+shell-integration-features = no-cursor,sudo,title
+
+theme = LucyGhost
+font-family = Lilex Nerd Font
+font-size = 15
+cursor-style = block
+cursor-style-blink = false
+mouse-hide-while-typing = true
+link-url = true
+window-width = 101
+window-height = 31
+window-padding-x = 10
+window-padding-y = 4
+window-padding-balance = true
+window-inherit-working-directory = true
+window-theme = ghostty
+clipboard-read = allow
+clipboard-write = allow
+adw-toolbar-style = flat
+bold-is-bright = false
+auto-update = off
+
+keybind = super+alt+m=toggle_maximize
+keybind = super+shift+|=new_split:right
+keybind = super+shift+"=new_split:down
+keybind = super+shift+H=goto_split:left
+keybind = super+shift+J=goto_split:down
+keybind = super+shift+K=goto_split:up
+keybind = super+shift+L=goto_split:right
+keybind = super+shift+E=close_surface
+keybind = super+shift+Q=quit

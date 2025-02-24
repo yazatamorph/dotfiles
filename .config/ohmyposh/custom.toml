@@ -1,0 +1,127 @@
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+version = 3
+final_space = true
+
+[palette]
+  # _nc = "#232735" # shade of underwater blue
+  # base = "#292d3e" # gleam color: underwater blue
+  # surface = "#2f3343" # tint of underwater blue
+  # overlay = "#1e212e" # additional color / shade of underwater blue
+  # muted = "#747474" # shade of subtle
+  # subtle = "#c4c4c4" # additional color
+  # faff_pink = "#ffaff3" # gleam color: faff pink
+  # unnamed_blue = "#a6f0fc" # gleam color: unnamed blue
+  # text = "#ffdffa" # tint of faff pink
+  # hot_pink = "#fe7ab2" # additional color
+  # limesicle = "#c8ffa7" # additional color
+  # creamsicle = "#ffd596" # additional color
+  # lavender = "#b181ec" # additional color
+  # lemonsicle = "#fdffab" # additional color
+  # highlight_low = "#434a65" # shade of highlight_med
+  # highlight_med = "#4a5270" # additional color
+  # highlight_high = "#585f7b" # tint of highlight_med
+  # # unused gleam colors :{
+  # aged_plastic_yellow = "#fffbe8"
+  # unexpected_aubergine = "#584355"
+  # white = "#fefefc"
+  # charcoal = "#2f2f2f"
+  # black = "#1e1e1e"
+  # blacker = "#151515"
+
+  denim = '#6796e6'
+  fire = '#f44747'
+  gold = '#cd9731'
+  grey = '#6c6c6c'
+  lavender = '#d9baff'
+  peach = '#ffd596'
+  pink = '#ffaff3'
+
+[secondary_prompt]
+  template = '  ➡ '
+  foreground = 'magenta'
+  background = 'transparent'
+
+[transient_prompt]
+  template = '{{if gt .Code 0}}󱙝{{else}}󰊠{{end}} '
+  background = 'transparent'
+  foreground_templates = ['{{if gt .Code 0}}yellow{{end}}', '{{if eq .Code 0}}p:lavender{{end}}']
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '{{ .Icon }}  '
+    foreground = 'red'
+    background = 'transparent'
+    type = 'os'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '<magenta>{{ .UserName }}</>@<red>{{ .HostName }}</> '
+    foreground = 'p:pink'
+    background = 'transparent'
+    type = 'session'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '{{ .Path }}'
+    foreground = 'blue'
+    background = 'transparent'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+      style = 'full'
+
+  [[blocks.segments]]
+    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <green>{{ if gt .Behind 0 }}↓{{ end }}{{ if gt .Ahead 0}}↑{{ end }}</>'
+    foreground = 'white'
+    background = 'transparent'
+    type = 'git'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      cache_duration = 'none'
+      commit_icon = '#'
+      fetch_status = true
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    template = '{{ .FormattedMs }}'
+    foreground = 'yellow'
+    background = 'transparent'
+    type = 'executiontime'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+      style = 'roundrock'
+      threshold = 500
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '{{if gt .Code 0}}󱙝{{else}}󰊠{{end}} '
+    background = 'transparent'
+    type = 'text'
+    style = 'plain'
+    foreground_templates = ['{{if gt .Code 0}}yellow{{end}}', '{{if eq .Code 0}}p:lavender{{end}}']
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
