@@ -73,6 +73,13 @@ alias vim='nvim'
 alias nv='nvim'
 alias cdcm='cd ~/Documents/code_mines'
 
+# Load other aliases from file
+if [ -f ~/.zshaliases ]; then
+	source ~/.zshaliases
+else
+	print "404! Alias file (~/.zshaliases) not found"
+fi
+
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
