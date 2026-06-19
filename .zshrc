@@ -5,15 +5,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -f "/home/zareen/.ghcup/env" ] && source "/home/zareen/.ghcup/env" # ghcup-env for Haskell
-
 # opam configuration for OCaml
-[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r '/Users/zareen/.opam/opam-init/init.zsh' ]] || source '/Users/zareen/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+
+[ -f "/Users/zareen/.ghcup/env" ] && . "/Users/zareen/.ghcup/env" # ghcup-env
 
 # Set zinit directory
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
-eval $(keychain --eval --quiet github_ed25519)
 
 # Download zinit if it's not installed yet
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -25,7 +23,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Use oh-my-posh theme
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/custom.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/subtle-cyanosis.omp.json)"
 
 # Add zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
