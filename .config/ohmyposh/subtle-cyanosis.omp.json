@@ -1,0 +1,151 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "version": 4,
+    "console_title_template": "{{ .Shell }} in {{ .Folder }}",
+    "final_space": true,
+    "palette": {
+        "ansi_black": "#061512",
+        "ansi_bblack": "#123E37",
+        "ansi_red": "#CC8CC2",
+        "ansi_bred": "#FFAFF3",
+        "ansi_green": "#2C9685",
+        "ansi_bgreen": "#32AB97",
+        "ansi_yellow": "#89E2D3",
+        "ansi_byellow": "#9DE7DB",
+        "ansi_blue": "#3BCEB6",
+        "ansi_bblue": "#49FCDF",
+        "ansi_magenta": "#80587A",
+        "ansi_bmagenta": "#996992",
+        "ansi_cyan": "#4D8F84",
+        "ansi_bcyan": "#37BFA9",
+        "ansi_white": "#c4f0e9",
+        "ansi_bwhite": "#d8f5f0",
+        "cy_bg_blu": "#1B232F"
+    },
+    "secondary_prompt": {
+        "template": "  \udb85\udfaa ",
+        "foreground": "p:ansi_byellow",
+        "background": "transparent"
+    },
+    "transient_prompt": {
+        "template": "{{if gt .Code 0}}\uf00d{{else}}\uef15{{end}} ",
+        "background": "transparent",
+        "foreground_templates": ["{{if gt .Code 0}}p:ansi_red{{end}}", "{{if eq .Code 0}}p:ansi_blue{{end}}"]
+    },
+    "blocks": [
+        {
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "background": "p:ansi_bblue",
+                    "cache": {
+                        "duration": "none"
+                    },
+                    "foreground": "p:cy_bg_blu",
+                    "leading_diamond": "\ue0b6",
+                    "style": "diamond",
+                    "template": "{{ .Icon }} ",
+                    "type": "os"
+                },
+                {
+                    "background": "p:cy_bg_blu",
+                    "cache": {
+                        "duration": "none"
+                    },
+                    "foreground": "p:ansi_bred",
+                    "leading_diamond": "\ue0b6",
+                    "style": "diamond",
+                    "template": "\ued35 <p:ansi_bblue>{{ .UserName }}</> \uf108 <p:ansi_blue>{{ .HostName }}</>",
+                    "trailing_diamond": "\ue0b4",
+                    "type": "session"
+                },
+                {
+                    "background": "p:ansi_bcyan",
+                    "cache": {
+                        "duration": "none"
+                    },
+                    "foreground": "p:cy_bg_blu",
+                    "options": {
+                        "style": "full"
+                    },
+                    "style": "diamond",
+                    "template": " \uf07b {{ .Path }}",
+                    "trailing_diamond": "\ue0b4",
+                    "type": "path"
+                },
+                {
+                    "background": "transparent",
+                    "cache": {
+                        "duration": "none"
+                    },
+                    "foreground": "p:ansi_white",
+                    "options": {
+                        "branch_icon": "\uf126 ",
+                        "commit_icon": "\uf172 ",
+                        "fetch_status": true
+                    },
+                    "style": "plain",
+                    "template": " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <p:ansi_blue>{{ if gt .Behind 0 }}\uf063{{ end }}{{ if gt .Ahead 0}}\uf062{{ end }}</>",
+                    "type": "git"
+                }
+            ],
+            "type": "prompt"
+        },
+        {
+            "alignment": "right",
+            "segments": [
+                {
+                    "background": "p:ansi_bblack",
+                    "cache": {
+                        "duration": "none"
+                    },
+                    "foreground": "p:ansi_bblue",
+                    "leading_diamond": "\ue0b6",
+                    "style": "diamond",
+                    "template": "\uf017 {{ .CurrentDate | date .Format }}",
+                    "trailing_diamond": "\ue0b4",
+                    "type": "time"
+                }
+            ],
+            "type": "prompt"
+        },
+        {
+            "overflow": "hidden",
+            "segments": [
+                {
+                    "background": "transparent",
+                    "cache": {
+                        "duration": "none"
+                    },
+                    "foreground": "p:ansi_yellow",
+                    "options": {
+                        "style": "roundrock",
+                        "threshold": 500
+                    },
+                    "style": "plain",
+                    "template": "{{ .FormattedMs }}",
+                    "type": "executiontime"
+                }
+            ],
+            "type": "rprompt"
+        },
+        {
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "background": "transparent",
+                    "cache": {
+                        "duration": "none"
+                    },
+                    "foreground_templates": ["{{if gt .Code 0}}p:ansi_red{{end}}", "{{if eq .Code 0}}p:ansi_blue{{end}}"],
+                    "style": "plain",
+                    "template": "{{if gt .Code 0}}\uf00d{{else}}\uef15{{end}}",
+                    "type": "text"
+                }
+            ],
+            "type": "prompt"
+        }
+    ]
+}
